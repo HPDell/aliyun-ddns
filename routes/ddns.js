@@ -32,6 +32,8 @@ function updateDNS(ip, record, type, rr) {
                 }).catch((reason) => {
                     reject("UpdateDomainRecord error: " + reason);
                 });
+            } else {
+                resolve("Unchanged");
             }
         }).catch((reason) => {
             reject("DescribeDomainRecordInfo error: " + reason);
